@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://cdn.magicawakened.com/app/uploads/2023/04/18143230/WBG_Mystical_Wallpapers_Hogwarts_16x9_03_LA-1-1024x576.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#tabuleiro {
+    padding-top: 50px;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 15px;
+    justify-content: center;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 8px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+#pontuacao {
+    padding: 10px;
+}
+
+#desistir, #iniciar {
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    position: fixed;
+    z-index: 10;
+}
+
+#desistir {
+    background-color: rgba(47, 32, 131, 0.5);
+    color: rgb(245, 221, 86);
+    right: 10px;
+    bottom: 10px;
+}
+
+#desistir:hover {
+    background-color: rgba(177, 31, 31, 0.5);
+    color: white;
+}
+
+#iniciar {
+    background-color: rgba(177, 31, 31, 0.5);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#iniciar:hover {
+    background-color: rgba(47, 32, 131, 0.5);
+    color: rgb(245, 221, 86);
+}
+
+#introducao {
+    color: white;
+    font-size: 35px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+button.dificuldades {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-left: 19%;
+    margin-top: 19%;
+}
+
+#facil {
+    background-color: green;
+}
+
+#medio {
+    background-color: orange;
+}
+
+#dificil {
+    background-color: red;
+}
+
+@media (max-width: 768px) {
+    #iniciar {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+
+    #desistir {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #introducao {
+        font-size: 25px;
+    }
+
+    .card {
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    #iniciar {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    #desistir {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    #introducao {
+        font-size: 20px;
+    }
+
+    .card {
+        height: 100px;
+        width: 100px;
+    }
+
+    #tabuleiro {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
