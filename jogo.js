@@ -219,23 +219,23 @@ function Jogar() {
     }
 
     // Modifica a função que alterna o som
-    function tirarSom() {
-        if (somAtivo) {
-            // Desativa os sons
-            somdeacerto.muted = true;
-            somdeerro.muted = true;
-            somvitoria.muted = true;
-            somdereset.muted = true;
-            somAtivo = false;
-            buttonSound.innerHTML = '<span class="material-symbols-outlined"> no_sound </span>'; // Alterar o ícone para volume desligado
-        } else {
-            // Ativa os sons
-            somdeacerto.muted = false;
-            somdeerro.muted = false;
-            somvitoria.muted = false;
-            somdereset.muted = false;
-            somAtivo = true;
-            buttonSound.innerHTML = '<span class="material-symbols-outlined"> volume_up </span>'; // Alterar o ícone para volume ligado
-        }
-    }
+function tirarSom() {
+    if (somAtivo) {
+        // Desativa os sons
+        somdeacerto.muted = true;
+        somdeerro.muted = true;
+        somvitoria.muted = true;
+        somdereset.muted = true;
+        somAtivo = false;
+        buttonSound.innerHTML = '<span class="material-symbols-outlined">no_sound</span>'; // Alterar o ícone para volume desligado
+    } else {
+        // Ativa os sons
+        somdeacerto.muted = false;
+        somdeerro.muted = false;
+        somvitoria.muted = false;
+        somdereset.muted = false;
+        somAtivo = true;
+        buttonSound.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'; // Alterar o ícone para volume ligado
+    }
+}
 }
