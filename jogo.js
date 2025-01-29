@@ -31,7 +31,7 @@ function Jogar() {
     //criação do botão de volume
     const buttonSound = document.createElement('button');
     buttonSound.setAttribute("id", "volume");
-    buttonSound.innerHTML = '<span class="material-symbols-outlined"> volume_up </span>'
+    buttonSound.innerHTML = '<span class="material-symbols-outlined">  🔊 </span>'
     buttonSound.addEventListener("click", tirarSom);
     document.querySelector("body").appendChild(buttonSound);
 
@@ -227,7 +227,7 @@ function tirarSom() {
         somvitoria.muted = true;
         somdereset.muted = true;
         somAtivo = false;
-        buttonSound.innerHTML = '<span class="material-symbols-outlined">no_sound</span>'; // Alterar o ícone para volume desligado
+        buttonSound.innerHTML = '<span class="material-symbols-outlined">volume_mute</span>'; // Alterar o ícone para volume desligado
     } else {
         // Ativa os sons
         somdeacerto.muted = false;
@@ -235,7 +235,7 @@ function tirarSom() {
         somvitoria.muted = false;
         somdereset.muted = false;
         somAtivo = true;
-        buttonSound.innerHTML = '<span class="material-symbols-outlined">volume_up</span>'; // Alterar o ícone para volume ligado
+        buttonSound.innerHTML = '<span class="material-symbols-outlined"> 🔊 </span>'; // Alterar o ícone para volume ligado
     }
 }
 }
