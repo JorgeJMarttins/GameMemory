@@ -1,4 +1,21 @@
 function Jogar() {
+
+    // Variáveis para o estado do jogo
+    let vazio = "Vazio";
+    let resetar = 0;
+    let pontuacao = 0;
+    let IdPrimeiraImagem = null;
+    let checagem = false;
+    let cartas = [];
+    let qtdCartas = 0
+    // Efeitos sonoros
+    let somdeacerto = new Audio('somdeacerto.mp3');
+    let somdeerro = new Audio('somdeerro.mp3');
+    let somvitoria = new Audio('vitoria.mp3');
+    let somdereset = new Audio ("somdereset.mp3");
+    let somAtivo = true
+
+
     // Remove o botão de iniciar se ele existir
     const botaoiniciar = document.getElementById("iniciar");
     if (botaoiniciar){
@@ -10,6 +27,13 @@ function Jogar() {
         
     }
     botoesDificuldade.forEach(botao => botao.remove());
+
+    //criação do botão de volume
+    const buttonSound = document.createElement('button');
+    buttonSound.setAttribute("id", "volume");
+    buttonSound.innerHTML = '<span class="material-symbols-outlined"> volume_up </span>'
+    buttonSound.addEventListener("click", tirarSom);
+    document.querySelector("body").appendChild(buttonSound);
 
     // Cria o botão de reiniciar
     const button = document.createElement("button");
@@ -108,19 +132,6 @@ function Jogar() {
         document.getElementById("dificil").remove();
     }
 
-    // Variáveis para o estado do jogo
-    let vazio = "Vazio";
-    let resetar = 0;
-    let pontuacao = 0;
-    let IdPrimeiraImagem = null;
-    let checagem = false;
-    let cartas = [];
-    let qtdCartas = 0
-    // Efeitos sonoros
-    let somdeacerto = new Audio('somdeacerto.mp3');
-    let somdeerro = new Audio('somdeerro.mp3');
-    let somvitoria = new Audio('vitoria.mp3');
-
     function exibirCarta(posicao) {
         if (checagem || posicao == IdPrimeiraImagem) return;
 
@@ -190,8 +201,8 @@ function Jogar() {
 
     // Reinicia o jogo
     function ReiniciarPagina() {
-        let somdereset = new Audio ("somdereset.mp3");
         somdereset.play()
+        buttonSound.remove();
         Jogar();
     }
 
@@ -204,6 +215,27 @@ function Jogar() {
             document.documentElement.webkitRequestFullscreen();
         } else if (document.documentElement.msRequestFullscreen) {
             document.documentElement.msRequestFullscreen();
+        }
+    }
+
+    // Modifica a função que alterna o som
+    function tirarSom() {
+        if (somAtivo) {
+            // Desativa os sons
+            somdeacerto.muted = true;
+            somdeerro.muted = true;
+            somvitoria.muted = true;
+            somdereset.muted = true;
+            somAtivo = false;
+            buttonSound.innerHTML = '<span class="material-symbols-outlined"> no_sound </span>'; // Alterar o ícone para volume desligado
+        } else {
+            // Ativa os sons
+            somdeacerto.muted = false;
+            somdeerro.muted = false;
+            somvitoria.muted = false;
+            somdereset.muted = false;
+            somAtivo = true;
+            buttonSound.innerHTML = '<span class="material-symbols-outlined"> volume_up </span>'; // Alterar o ícone para volume ligado
         }
     }
 }
