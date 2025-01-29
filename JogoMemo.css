@@ -33,7 +33,7 @@ body {
     padding: 10px;
 }
 
-#desistir, #iniciar {
+#desistir, #iniciar, #volume {
     padding: 15px 40px;
     border-radius: 10px;
     font-size: 16px;
@@ -144,4 +144,10 @@ button.dificuldades {
     #tabuleiro {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
+}
+
+#volume{
+    background-color: rgba(47, 32, 131, 0.5);
+    left: 10px;
+    bottom: 10px;
 }
