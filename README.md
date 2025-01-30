@@ -19,4 +19,3 @@ O objetivo do jogo é encontrar todos os pares de cartas no menor tempo possíve
 
 ## 💡 Experimente e Divirta-se!  
 Esperamos que gostem do jogo e se divirtam jogando! 😃  
-### https://murtben-games-gamemory.netlify.app/
