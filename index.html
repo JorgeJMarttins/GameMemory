@@ -7,8 +7,34 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="stylesheet" href="JogoMemo.css">
+    <style>
+        /* Adiciona o estilo para o botão ficar no canto superior esquerdo */
+        .botao-canto {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .botao-canto a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .botao-canto a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+    <!-- Botão de voltar para o launcher -->
+    <button class="botao-canto"> <a href="https://jorgejmarttins.github.io/jogos-dos-bixos/">Voltar para o launcher</a></button>
+
     <div id="pontuacao"></div>
     <div id="tabuleiro">
         <h1 id="introducao">Clique para começar</h1>
